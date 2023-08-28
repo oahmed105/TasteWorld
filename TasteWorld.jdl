@@ -1,0 +1,70 @@
+//application {
+//  config {
+//    baseName TasteWorld,
+//    applicationType monolith,
+//    packageName com.zipcode.project,
+//    authenticationType jwt,
+//    prodDatabaseType mysql,
+//    clientFramework react
+//  }
+//  entities *
+//}
+
+entity UserProfile {
+  name String required
+}
+
+entity Cuisine {
+  name String,
+  origin String,
+  description String
+}
+
+entity Recipe {
+  name String,
+  ingredients String,
+  instructions String
+//  cuisineID Long
+}
+
+entity Review {
+  rating Integer required min(1) max(5),
+  comment String
+}
+
+entity User {
+  login String unique
+}
+
+
+// Defining multiple OneToMany relationships with comments
+relationship OneToMany {
+  UserProfile{review} to Review{userProfile},
+  Cuisine{recipe} to Recipe{cuisine},
+  Recipe{review} to Review{recipe}
+//  UserProfile{recipe} to Recipe{userProfile}
+}
+
+relationship ManyToOne { // Define the ManyToOne relationship between UserProfile and Recipe
+  UserProfile{recipe} to Recipe{userProfile}
+}
+
+relationship OneToOne {
+  UserProfile{internalUser(login)} to User
+}
+
+
+
+// Set pagination options
+//paginate Cuisine, Review, Recipe, User with infinite-scroll
+//paginate Job with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
+    

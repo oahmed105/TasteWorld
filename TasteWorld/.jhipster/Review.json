@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20230827210702",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "review",
+  "fields": [
+    {
+      "fieldName": "rating",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMax": "5",
+      "fieldValidateRulesMin": "1"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Review",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userProfile",
+      "otherEntityRelationshipName": "review",
+      "relationshipName": "userProfile",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "review",
+      "relationshipName": "recipe",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

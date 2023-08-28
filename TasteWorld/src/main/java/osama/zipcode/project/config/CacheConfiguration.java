@@ -48,6 +48,14 @@ public class CacheConfiguration {
             createCache(cm, osama.zipcode.project.domain.User.class.getName());
             createCache(cm, osama.zipcode.project.domain.Authority.class.getName());
             createCache(cm, osama.zipcode.project.domain.User.class.getName() + ".authorities");
+            createCache(cm, osama.zipcode.project.domain.UserProfile.class.getName());
+            createCache(cm, osama.zipcode.project.domain.UserProfile.class.getName() + ".reviews");
+            createCache(cm, osama.zipcode.project.domain.Cuisine.class.getName());
+            createCache(cm, osama.zipcode.project.domain.Cuisine.class.getName() + ".recipes");
+            createCache(cm, osama.zipcode.project.domain.Recipe.class.getName());
+            createCache(cm, osama.zipcode.project.domain.Recipe.class.getName() + ".reviews");
+            createCache(cm, osama.zipcode.project.domain.Recipe.class.getName() + ".userProfiles");
+            createCache(cm, osama.zipcode.project.domain.Review.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

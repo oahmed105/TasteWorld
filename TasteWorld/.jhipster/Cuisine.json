@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20230827210700",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "cuisine",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "origin",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Cuisine",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "cuisine",
+      "relationshipName": "recipe",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

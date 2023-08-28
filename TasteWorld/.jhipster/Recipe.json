@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20230827210701",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "recipe",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ingredients",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "instructions",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Recipe",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "review",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "review",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "cuisine",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "cuisine",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "userProfile",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "userProfile",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

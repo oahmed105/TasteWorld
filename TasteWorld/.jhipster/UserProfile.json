@@ -1,0 +1,41 @@
+{
+  "applications": "*",
+  "changelogDate": "20230827210659",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_profile",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserProfile",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "ownerSide": true,
+      "relationshipName": "internalUser",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "review",
+      "otherEntityRelationshipName": "userProfile",
+      "relationshipName": "review",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "userProfile",
+      "relationshipName": "recipe",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
