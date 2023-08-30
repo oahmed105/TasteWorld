@@ -17,6 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 import osama.zipcode.project.IntegrationTest;
 import osama.zipcode.project.domain.Recipe;
 import osama.zipcode.project.repository.RecipeRepository;
@@ -131,8 +132,8 @@ class RecipeResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(recipe.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
-            .andExpect(jsonPath("$.[*].ingredients").value(hasItem(DEFAULT_INGREDIENTS)))
-            .andExpect(jsonPath("$.[*].instructions").value(hasItem(DEFAULT_INSTRUCTIONS)));
+            .andExpect(jsonPath("$.[*].ingredients").value(hasItem(DEFAULT_INGREDIENTS.toString())))
+            .andExpect(jsonPath("$.[*].instructions").value(hasItem(DEFAULT_INSTRUCTIONS.toString())));
     }
 
     @Test
@@ -148,8 +149,8 @@ class RecipeResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(recipe.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
-            .andExpect(jsonPath("$.ingredients").value(DEFAULT_INGREDIENTS))
-            .andExpect(jsonPath("$.instructions").value(DEFAULT_INSTRUCTIONS));
+            .andExpect(jsonPath("$.ingredients").value(DEFAULT_INGREDIENTS.toString()))
+            .andExpect(jsonPath("$.instructions").value(DEFAULT_INSTRUCTIONS.toString()));
     }
 
     @Test

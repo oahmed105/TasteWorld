@@ -14,7 +14,8 @@
     },
     {
       "fieldName": "comment",
-      "fieldType": "String"
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
     }
   ],
   "fluentMethods": true,

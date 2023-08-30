@@ -67,7 +67,7 @@ function showCuisineList(data) {
         let title = document.createElement('h3');
         let body = document.createElement('p');
         let by = document.createElement('p');
-        title.innerHTML = `<a href="/cuisines.html?id=${post.id}">${post.name}</a>`;
+        title.innerHTML = `<a href="/details.html?id=${post.id}">${post.name}</a>`;
         body.innerHTML = `${post.description}`;
         //let postedTime = dateOf(post.time)
         by.innerHTML = `${post.origin}`;

@@ -27,9 +27,11 @@ public class Recipe implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @Lob
     @Column(name = "ingredients")
     private String ingredients;
 
+    @Lob
     @Column(name = "instructions")
     private String instructions;
 

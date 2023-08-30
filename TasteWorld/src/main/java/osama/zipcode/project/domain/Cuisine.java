@@ -27,10 +27,12 @@ public class Cuisine implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "origin")
+    @Lob
+    @Column(name = "origin", length = 2048)
     private String origin;
 
-    @Column(name = "description")
+    @Lob
+    @Column(name = "description", length = 2048)
     private String description;
 
     @OneToMany(mappedBy = "cuisine")

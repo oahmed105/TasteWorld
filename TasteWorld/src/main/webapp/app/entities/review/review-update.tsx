@@ -104,7 +104,7 @@ export const ReviewUpdate = () => {
                   validate: v => isNumber(v) || 'This field should be a number.',
                 }}
               />
-              <ValidatedField label="Comment" id="review-comment" name="comment" data-cy="comment" type="text" />
+              <ValidatedField label="Comment" id="review-comment" name="comment" data-cy="comment" type="textarea" />
               <ValidatedField id="review-userProfile" name="userProfile" data-cy="userProfile" label="User Profile" type="select">
                 <option value="" key="0" />
                 {userProfiles

@@ -79,8 +79,8 @@ export const CuisineUpdate = () => {
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? <ValidatedField name="id" required readOnly id="cuisine-id" label="ID" validate={{ required: true }} /> : null}
               <ValidatedField label="Name" id="cuisine-name" name="name" data-cy="name" type="text" />
-              <ValidatedField label="Origin" id="cuisine-origin" name="origin" data-cy="origin" type="text" />
-              <ValidatedField label="Description" id="cuisine-description" name="description" data-cy="description" type="text" />
+              <ValidatedField label="Origin" id="cuisine-origin" name="origin" data-cy="origin" type="textarea" />
+              <ValidatedField label="Description" id="cuisine-description" name="description" data-cy="description" type="textarea" />
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/cuisine" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

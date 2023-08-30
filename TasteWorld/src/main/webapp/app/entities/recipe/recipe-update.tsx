@@ -86,8 +86,8 @@ export const RecipeUpdate = () => {
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? <ValidatedField name="id" required readOnly id="recipe-id" label="ID" validate={{ required: true }} /> : null}
               <ValidatedField label="Name" id="recipe-name" name="name" data-cy="name" type="text" />
-              <ValidatedField label="Ingredients" id="recipe-ingredients" name="ingredients" data-cy="ingredients" type="text" />
-              <ValidatedField label="Instructions" id="recipe-instructions" name="instructions" data-cy="instructions" type="text" />
+              <ValidatedField label="Ingredients" id="recipe-ingredients" name="ingredients" data-cy="ingredients" type="textarea" />
+              <ValidatedField label="Instructions" id="recipe-instructions" name="instructions" data-cy="instructions" type="textarea" />
               <ValidatedField id="recipe-cuisine" name="cuisine" data-cy="cuisine" label="Cuisine" type="select">
                 <option value="" key="0" />
                 {cuisines

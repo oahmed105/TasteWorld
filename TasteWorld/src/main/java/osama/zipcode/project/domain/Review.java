@@ -29,6 +29,7 @@ public class Review implements Serializable {
     @Column(name = "rating", nullable = false)
     private Integer rating;
 
+    @Lob
     @Column(name = "comment")
     private String comment;
 
